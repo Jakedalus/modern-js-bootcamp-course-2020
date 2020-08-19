@@ -62,6 +62,65 @@ console.log('[7,12,56]', average([ 7, 12, 56 ]));
 
 /////// PANGRAMS ///////
 console.log('/////// PANGRAMS ///////');
+function isPangram(str) {
+	const letters = {};
+
+	for (let c of 'abcdefghijklmnopqrstuvwxyz') {
+		letters[c] = true;
+	}
+	// console.log(letters);
+
+	for (let c of str) {
+		delete letters[c.toLowerCase()];
+	}
+
+	console.log(letters);
+
+	return !(Object.keys(letters).length > 0);
+}
+
+console.log(
+	'The five boxing wizards jump quickly.',
+	isPangram('The five boxing wizards jump quickly.')
+);
+console.log(
+	'The five boxing wizards jump.',
+	isPangram('The five boxing wizards jump.')
+);
+console.log(
+	'The quick brown fox jumps over the lazy dog.',
+	isPangram('The quick brown fox jumps over the lazy dog.')
+);
 
 /////// PLAYING CARDS ///////
 console.log('/////// PLAYING CARDS ///////');
+
+function getCard() {
+	const values = [
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		'J',
+		'Q',
+		'K',
+		'A'
+	];
+	const value =
+		values[Math.floor(Math.random() * values.length)];
+	const suits = [ 'Clubs', 'Spades', 'Diamonds', 'Hearts' ];
+	const suit =
+		suits[Math.floor(Math.random() * suits.length)];
+
+	return { value, suit };
+}
+
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
