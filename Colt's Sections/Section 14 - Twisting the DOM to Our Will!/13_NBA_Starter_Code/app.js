@@ -125,5 +125,5 @@ const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
 const chart1 = makeChart(warriorsGames, 'Golden State');
 const chart2 = makeChart(warriorsGames, 'Houston');
 
-document.body.prepend(chart1);
-document.body.append(chart2);
+document.getElementById('GS').append(chart1);
+document.getElementById('HR').append(chart2);
