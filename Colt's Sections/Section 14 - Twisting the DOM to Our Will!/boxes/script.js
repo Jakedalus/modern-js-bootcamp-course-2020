@@ -22,4 +22,12 @@ for (let color of colors) {
 	box.style.backgroundColor = color;
 	boxes.append(box);
 	box.addEventListener('click', changeColor);
+	box.addEventListener('mouseover', function() {
+		console.log(this);
+		this.style.opacity = '0.5';
+	});
+	box.addEventListener('mouseleave', function() {
+		console.log(this);
+		this.style.opacity = '1';
+	});
 }
